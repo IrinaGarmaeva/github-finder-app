@@ -21,14 +21,11 @@ export const GithubProvider = ({ children }) => {
       q: text,
     });
 
-    const response = await fetch(
-      `${GITHUB_URL}/search/users?${params}`,
-      {
-        headers: {
-          Authorization: `token ${GITHUB_TOKEN}`,
-        },
-      }
-    );
+    const response = await fetch(`${GITHUB_URL}/search/users?${params}`, {
+      headers: {
+        Authorization: `token ${GITHUB_TOKEN}`,
+      },
+    });
 
     const { items } = await response.json();
 
@@ -38,11 +35,19 @@ export const GithubProvider = ({ children }) => {
     });
   };
 
+  // Clear users from state
+  const clearUsers = () => dispatch({ type: "CLEAR_USERS" });
+
   const setLoading = () => dispatch({ type: "SET_LOADING" });
 
   return (
     <GithubContext.Provider
-      value={{ users: state.users, loading: state.loading, searchUsers }}
+      value={{
+        users: state.users,
+        loading: state.loading,
+        searchUsers,
+        clearUsers,
+      }}
     >
       {children}
     </GithubContext.Provider>
