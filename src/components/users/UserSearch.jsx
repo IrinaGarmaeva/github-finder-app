@@ -3,6 +3,7 @@ import GithubContext from "../../context/github/GithubContext";
 import AlertContext from "../../context/alert/AlertContext";
 import { searchUsers } from "../../context/github/GithubActions";
 
+
 function UserSearch() {
   const [text, setText] = useState('');
   const { users, dispatch } = useContext(GithubContext);
