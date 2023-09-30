@@ -1,7 +1,7 @@
-# Project "Github Finder"
+# Github Finder App
 
 ## Description
-## `Github finder` is a spa where you can search for Github users and visit their repositories easily and simply! This project is used to train React and api requests.
+## `Github finder` is a spa where you can search for Github users and visit their repositories easily and simply. This project is used to train React and api requests.
 
 This project is hosted on [Vercel](https://github-finder-app-nine-beta.vercel.app/)
 
